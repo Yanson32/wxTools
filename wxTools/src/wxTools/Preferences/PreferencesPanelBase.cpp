@@ -1,4 +1,4 @@
-#include "AwesomeWMShared/PreferencesPanelBase.h"
+#include "wxTools/PreferencesPanelBase.h"
 #include <wx/valnum.h> 
 
 

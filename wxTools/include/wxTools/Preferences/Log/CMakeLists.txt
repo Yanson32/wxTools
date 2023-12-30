@@ -1,3 +1,5 @@
+debug_report("Source file = ${CMAKE_CURRENT_LIST_FILE}")
+
 #Add all header files to this variable
 set(FILES ""
 
@@ -12,7 +14,7 @@ foreach(LOOP_VAR ${DIRECTORIES})
 endforeach()
 
 #The path to this directory from the directory containing Main.cpp
-set(RELATIVE "include/Preferences/Log")
+set(RELATIVE "include/wxTools/Preferences/Log")
 
 
 if(FILES)

@@ -1,7 +1,9 @@
 debug_report("Source file = ${CMAKE_CURRENT_LIST_FILE}")
-debug_report("PROJECT_NAME = ${PROJECT_NAME}-Gui")
+debug_report("PROJECT_NAME = ${PROJECT_NAME}")
 
 add_library("${PROJECT_NAME}" "")
+set_target_properties("${PROJECT_NAME}" PROPERTIES LINKER_LANGUAGE CXX)
+
 
 target_include_directories("${PROJECT_NAME}" PRIVATE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

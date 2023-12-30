@@ -1,9 +1,13 @@
+debug_report("Source file = ${CMAKE_CURRENT_LIST_FILE}")
+
 #Add all header files to this variable
-set(FILES "${CMAKE_CURRENT_LIST_DIR}/PreferencesPanelBase.h"
+set(FILES "${CMAKE_CURRENT_LIST_DIR}/StatusRAII.h"
+"${CMAKE_CURRENT_LIST_DIR}/Convert.h"	
+
 )
 
 #Add all subdirectories to this variable
-set(DIRECTORIES "Log")
+set(DIRECTORIES "")
 
 #Add subdirectories
 foreach(LOOP_VAR ${DIRECTORIES})
@@ -11,7 +15,7 @@ foreach(LOOP_VAR ${DIRECTORIES})
 endforeach()
 
 #The path to this directory from the directory containing Main.cpp
-set(RELATIVE "include/Preferences")
+set(RELATIVE "include/wxTools")
 
 
 if(FILES)

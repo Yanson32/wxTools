@@ -1,4 +1,4 @@
-#include "AwesomeWMShared/StatusRAII.h"
+#include "wxTools/StatusRAII.h"
 
 
 StatusRAII::StatusRAII(wxStatusBar *statusbar, const wxString &message, const long newPosition):

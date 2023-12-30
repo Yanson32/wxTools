@@ -1,11 +1,11 @@
-#Add all header files to this variable
-set(FILES "${CMAKE_CURRENT_LIST_DIR}/StatusRAII.h"
-"${CMAKE_CURRENT_LIST_DIR}/Convert.h"	
+debug_report("Source file = ${CMAKE_CURRENT_LIST_FILE}")
 
+#Add all header files to this variable
+set(FILES ""
 )
 
 #Add all subdirectories to this variable
-set(DIRECTORIES "Preferences")
+set(DIRECTORIES "wxTools")
 
 #Add subdirectories
 foreach(LOOP_VAR ${DIRECTORIES})
