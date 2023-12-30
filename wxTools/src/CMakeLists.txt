@@ -12,10 +12,10 @@ foreach(LOOP_VAR ${DIRECTORIES})
 endforeach()
 
 #The path to this directory from the directory containing Main.cpp
-set(RELATIVE "include")
+set(RELATIVE "src")
 
 
 if(FILES)
 	#Add all source files to executable
-	target_sources("${PROJECT_NAME}-Gui" PRIVATE ${FILES})
+	target_sources("${PROJECT_NAME}" PRIVATE ${FILES})
 endif()

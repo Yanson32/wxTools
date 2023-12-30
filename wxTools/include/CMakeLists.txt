@@ -18,5 +18,5 @@ set(RELATIVE "include")
 
 if(FILES)
 	#Add all source files to executable
-	target_sources("${PROJECT_NAME}-Gui" PRIVATE ${FILES})
+	target_sources("${PROJECT_NAME}" PRIVATE ${FILES})
 endif()

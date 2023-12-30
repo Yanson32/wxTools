@@ -5,7 +5,7 @@ set(FILES "${CMAKE_CURRENT_LIST_DIR}/StatusRAII.h"
 )
 
 #Add all subdirectories to this variable
-set(DIRECTORIES "Preferences")
+set(DIRECTORIES "Log")
 
 #Add subdirectories
 foreach(LOOP_VAR ${DIRECTORIES})
@@ -13,10 +13,10 @@ foreach(LOOP_VAR ${DIRECTORIES})
 endforeach()
 
 #The path to this directory from the directory containing Main.cpp
-set(RELATIVE "include")
+set(RELATIVE "include/Preferences")
 
 
 if(FILES)
 	#Add all source files to executable
-	target_sources("${PROJECT_NAME}-Gui" PRIVATE ${FILES})
+	target_sources("${PROJECT_NAME}" PRIVATE ${FILES})
 endif()
