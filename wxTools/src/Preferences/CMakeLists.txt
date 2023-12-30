@@ -1,6 +1,5 @@
 #Add all header files to this variable
-set(FILES "${CMAKE_CURRENT_LIST_DIR}/StatusRAII.h"
-"${CMAKE_CURRENT_LIST_DIR}/Convert.h"	
+set(FILES "${CMAKE_CURRENT_LIST_DIR}/PreferencesPanelBase.cpp"
 
 )
 
