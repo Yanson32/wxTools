@@ -26,6 +26,17 @@
 #include <cassert>
 #include <string>
 
+
+/**************************************************************************
+*   @brief  This function converts an object to an std::string 
+*   @param  param is the object to be converted 
+*   @return A std::string equivalent to the input parameter 
+**************************************************************************/
+std::string toStdString(const std::string &param)
+{
+    return param;
+}
+
 /**************************************************************************
 *   @brief  This function converts an object to an std::string 
 *   @param  param is the object to be converted 
@@ -115,6 +126,18 @@ std::string toStdString(const long &param)
 *   @param  param is the object to be converted 
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
+wxString toWxString(const wxString &param)
+{
+    wxLogTrace("Convert.cpp", __FUNCTION__);
+    return param;
+}
+
+
+/**************************************************************************
+*   @brief  This function converts an object to a wxString 
+*   @param  param is the object to be converted 
+*   @return A wxString equivalent to the input parameter 
+**************************************************************************/
 wxString toWxString(const std::string &param)
 {
     wxLogTrace("Convert.cpp", __FUNCTION__);
@@ -191,6 +214,18 @@ wxString toWxString(const long &param)
 {
     wxLogTrace("Convert.cpp", __FUNCTION__);
     return toWxString(toStdString(param));
+}
+
+
+/**********************************************************************//**
+*   @brief  This function converts an object to a wxFileName
+*   @param  param is the object to be converte
+*   @return A wxFileName equivalent to the input parameter 
+**************************************************************************/
+wxFileName toWxFileName(const wxFileName &param)
+{
+    wxLogTrace("Convert.cpp", __FUNCTION__);
+    return param;
 }
 
 

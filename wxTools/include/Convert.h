@@ -31,6 +31,12 @@
 #include <string>
 #include <wx/filename.h>
 
+/**************************************************************************
+*   @brief  This function converts an object to an std::string 
+*   @param  param is the object to be converted 
+*   @return A std::string equivalent to the input parameter 
+**************************************************************************/
+std::string toStdString(const std::string &param);
 
 /**************************************************************************
 *   @brief  This function converts an object to an std::string 
@@ -77,6 +83,14 @@ std::string toStdString(const float &param);
 *   @param  param is the object to be converted 
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
+wxString toWxString(const wxString &param);
+
+
+/**************************************************************************
+*   @brief  This function converts an object to a wxString 
+*   @param  param is the object to be converted 
+*   @return A wxString equivalent to the input parameter 
+**************************************************************************/
 wxString toWxString(const std::string &param);
 
 
@@ -110,6 +124,14 @@ wxString toWxString(const int &param);
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
 wxString toWxString(const float &param);
+
+
+/**************************************************************************
+*   @brief  This function converts an object to a wxFileName
+*   @param  param is the object to be converte
+*   @return A wxFileName equivalent to the input parameter 
+**************************************************************************/
+wxFileName toWxFileName(const wxFileName &param);
 
 
 /**************************************************************************
