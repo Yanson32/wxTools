@@ -16,6 +16,7 @@ include(GenerateExportHeader)
 
 #Create library target
 add_library("${PROJECT_NAME}" "")
+add_library("${PROJECT_NAME}" ALIAS "WXT::${PROJECT_NAME}")
 
 #set linker language
 set_target_properties("${PROJECT_NAME}" PROPERTIES LINKER_LANGUAGE CXX)
