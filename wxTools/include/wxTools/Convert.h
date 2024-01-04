@@ -30,20 +30,7 @@
 
 #include <string>
 #include <wx/filename.h>
-
-/**************************************************************************
-*   @brief  This function converts an object to an std::string 
-*   @param  param is the object to be converted 
-*   @return A std::string equivalent to the input parameter 
-**************************************************************************/
-std::string toStdString(const std::string &param);
-
-/**************************************************************************
-*   @brief  This function converts an object to an std::string 
-*   @param  param is the object to be converted 
-*   @return A std::string equivalent to the input parameter 
-**************************************************************************/
-std::string toStdString(const wxFileName &param);
+#include <wxtools_export.h>
 
 
 /**************************************************************************
@@ -51,7 +38,14 @@ std::string toStdString(const wxFileName &param);
 *   @param  param is the object to be converted 
 *   @return A std::string equivalent to the input parameter 
 **************************************************************************/
-std::string toStdString(const wxString &param);
+std::string WXTOOLS_EXPORT toStdString(const std::string &param);
+
+/**************************************************************************
+*   @brief  This function converts an object to an std::string 
+*   @param  param is the object to be converted 
+*   @return A std::string equivalent to the input parameter 
+**************************************************************************/
+std::string WXTOOLS_EXPORT toStdString(const wxFileName &param);
 
 
 /**************************************************************************
@@ -59,7 +53,7 @@ std::string toStdString(const wxString &param);
 *   @param  param is the object to be converted 
 *   @return A std::string equivalent to the input parameter 
 **************************************************************************/
-std::string toStdString(const std::filesystem::path &param);
+std::string WXTOOLS_EXPORT toStdString(const wxString &param);
 
 
 /**************************************************************************
@@ -67,7 +61,7 @@ std::string toStdString(const std::filesystem::path &param);
 *   @param  param is the object to be converted 
 *   @return A std::string equivalent to the input parameter 
 **************************************************************************/
-std::string toStdString(const int &param);
+std::string WXTOOLS_EXPORT toStdString(const std::filesystem::path &param);
 
 
 /**************************************************************************
@@ -75,7 +69,15 @@ std::string toStdString(const int &param);
 *   @param  param is the object to be converted 
 *   @return A std::string equivalent to the input parameter 
 **************************************************************************/
-std::string toStdString(const float &param);
+std::string WXTOOLS_EXPORT toStdString(const int &param);
+
+
+/**************************************************************************
+*   @brief  This function converts an object to an std::string 
+*   @param  param is the object to be converted 
+*   @return A std::string equivalent to the input parameter 
+**************************************************************************/
+std::string WXTOOLS_EXPORT toStdString(const float &param);
 
 
 /**************************************************************************
@@ -83,7 +85,7 @@ std::string toStdString(const float &param);
 *   @param  param is the object to be converted 
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
-wxString toWxString(const wxString &param);
+wxString WXTOOLS_EXPORT toWxString(const wxString &param);
 
 
 /**************************************************************************
@@ -91,7 +93,7 @@ wxString toWxString(const wxString &param);
 *   @param  param is the object to be converted 
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
-wxString toWxString(const std::string &param);
+wxString WXTOOLS_EXPORT toWxString(const std::string &param);
 
 
 /**************************************************************************
@@ -99,15 +101,7 @@ wxString toWxString(const std::string &param);
 *   @param  param is the object to be converted 
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
-wxString toWxString(const wxFileName &param);
-
-
-/**************************************************************************
-*   @brief  This function converts an object to a wxString 
-*   @param  param is the object to be converte
-*   @return A wxString equivalent to the input parameter 
-**************************************************************************/
-wxString toWxString(const std::filesystem::path &param);
+wxString WXTOOLS_EXPORT toWxString(const wxFileName &param);
 
 
 /**************************************************************************
@@ -115,7 +109,7 @@ wxString toWxString(const std::filesystem::path &param);
 *   @param  param is the object to be converte
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
-wxString toWxString(const int &param);
+wxString WXTOOLS_EXPORT toWxString(const std::filesystem::path &param);
 
 
 /**************************************************************************
@@ -123,7 +117,15 @@ wxString toWxString(const int &param);
 *   @param  param is the object to be converte
 *   @return A wxString equivalent to the input parameter 
 **************************************************************************/
-wxString toWxString(const float &param);
+wxString WXTOOLS_EXPORT toWxString(const int &param);
+
+
+/**************************************************************************
+*   @brief  This function converts an object to a wxString 
+*   @param  param is the object to be converte
+*   @return A wxString equivalent to the input parameter 
+**************************************************************************/
+wxString WXTOOLS_EXPORT toWxString(const float &param);
 
 
 /**************************************************************************
@@ -131,7 +133,7 @@ wxString toWxString(const float &param);
 *   @param  param is the object to be converte
 *   @return A wxFileName equivalent to the input parameter 
 **************************************************************************/
-wxFileName toWxFileName(const wxFileName &param);
+wxFileName WXTOOLS_EXPORT toWxFileName(const wxFileName &param);
 
 
 /**************************************************************************
@@ -139,7 +141,7 @@ wxFileName toWxFileName(const wxFileName &param);
 *   @param  param is the object to be converte
 *   @return A wxFileName equivalent to the input parameter 
 **************************************************************************/
-wxFileName toWxFileName(const std::string &param);
+wxFileName WXTOOLS_EXPORT toWxFileName(const std::string &param);
 
 
 /**************************************************************************
@@ -147,7 +149,7 @@ wxFileName toWxFileName(const std::string &param);
 *   @param  param is the object to be converte
 *   @return A wxFileName equivalent to the input parameter 
 **************************************************************************/
-wxFileName toWxFileName(const wxString &param);
+wxFileName WXTOOLS_EXPORT toWxFileName(const wxString &param);
 
 
 /**************************************************************************
@@ -155,4 +157,4 @@ wxFileName toWxFileName(const wxString &param);
 *   @param  param is the object to be converte
 *   @return A wxFileName equivalent to the input parameter 
 **************************************************************************/
-wxFileName toWxFileName(const std::filesystem::path &param);
+wxFileName WXTOOLS_EXPORT toWxFileName(const std::filesystem::path &param);

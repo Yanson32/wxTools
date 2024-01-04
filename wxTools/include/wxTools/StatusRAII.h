@@ -6,9 +6,9 @@
     #include <wx/wx.h>
 #endif
 
-#include <awesomewm-shared_export.h>
+#include <wxtools_export.h>
 
-class AWESOMEWM_SHARED_EXPORT StatusRAII
+class WXTOOLS_EXPORT StatusRAII
 {
 	public:
         	StatusRAII(wxStatusBar *statusbar, const wxString &message, const long newPosition = 0);
