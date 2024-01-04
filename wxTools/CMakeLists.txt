@@ -1,7 +1,7 @@
 debug_report("Source file = ${CMAKE_CURRENT_LIST_FILE}")
 debug_report("PROJECT_NAME = ${PROJECT_NAME}")
 
-set(WXT_CONFIG_BUILD_DIR "${wxTools}/${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
+set(WXT_CONFIG_BUILD_DIR "${wxTools_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 set(WXT_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 
 #create a postfix for static libraries
