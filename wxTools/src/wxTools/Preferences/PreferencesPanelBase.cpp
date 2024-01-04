@@ -1,4 +1,4 @@
-#include "wxTools/PreferencesPanelBase.h"
+#include "wxTools/Preferences/PreferencesPanelBase.h"
 #include <wx/valnum.h> 
 
 
