@@ -6,7 +6,7 @@ set(FILES "${CMAKE_CURRENT_LIST_DIR}/StatusRAII.cpp"
 )
 
 #Add all subdirectories to this variable
-set(DIRECTORIES "")
+set(DIRECTORIES "Preferences")
 
 #Add subdirectories
 foreach(LOOP_VAR ${DIRECTORIES})

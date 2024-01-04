@@ -5,7 +5,7 @@ set(FILES ""
 )
 
 #Add all subdirectories to this variable
-set(DIRECTORIES "")
+set(DIRECTORIES "wxTools")
 
 #Add subdirectories
 foreach(LOOP_VAR ${DIRECTORIES})
