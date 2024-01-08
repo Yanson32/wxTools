@@ -47,9 +47,13 @@ target_compile_features("${PROJECT_NAME}" PUBLIC cxx_std_20)
 add_subdirectory("include")
 add_subdirectory("src")
 
+set(WXT_WX_VERSION "" CACHE STRING "Set the version of wxWidgets to link against")
+
 #Link against the wxWidgets library
 find_package(wxWidgets ${WXT_WX_VERSION} REQUIRED COMPONENTS core base)
+
 include(${wxWidgets_USE_FILE})
+
 debug_report("wxWidgets_USE_FILE = ${wxWidgets_USE_FILE}")
 debug_report("wxWidgets version=${wxWidgets_FIND_VERSION_COMPLETE} Found=${wxWidgets_FOUND}")
 debug_report("wxWidgets_VERSION = ${wxWidgets_VERSION}")
