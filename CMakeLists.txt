@@ -16,7 +16,7 @@ project("wxTools" VERSION 0.0.0.1 LANGUAGES CXX)
 debug_init()
 add_subdirectory(wxTools)
 
-set(WXT_EXAMPLES False CACHE STRING "Build examples when this variable is set to True")
+set(WXT_EXAMPLES False CACHE BOOL "Build examples when this variable is set to True")
 
 #Build preferences
 if(WXT_EXAMPLES)
