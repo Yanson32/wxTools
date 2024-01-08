@@ -12,10 +12,13 @@ foreach(LOOP_VAR ${DIRECTORIES})
 endforeach()
 
 #The path to this directory from the directory containing Main.cpp
-set(RELATIVE "src/wxTools/Preferences/Log")
+set(INSTALL_DIRECTORY "src/wxTools/Preferences/Log")
 
 
 if(FILES)
 	#Add all source files to executable
 	target_sources("${PROJECT_NAME}" PRIVATE ${FILES})
+    
+    #Install source files
+	install(FILES ${FILES} DESTINATION "${INSTALL_DIRECTORY}" COMPONENT "libs")
 endif()
