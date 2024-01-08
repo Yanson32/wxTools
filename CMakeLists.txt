@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION "3.20.0")
-include("debug")
 
+#Set module path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+
+#Include debug module
+include("debug")
+
 debug_report("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 
 include("help")
@@ -12,8 +16,10 @@ project("wxTools" VERSION 0.0.0.1 LANGUAGES CXX)
 debug_init()
 add_subdirectory(wxTools)
 
+set(WXT_EXAMPLES False CACHE STRING "Build examples when this variable is set to True")
+
 #Build preferences
-if(WX_TOOLS_EXAMPLES)
+if(WXT_EXAMPLES)
     add_subdirectory(examples)
 endif()
 
