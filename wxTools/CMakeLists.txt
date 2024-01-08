@@ -12,14 +12,9 @@ endif()
 #Build shared library by default
 option(BUILD_SHARED_LIBS "True when building shared libraries" True)
 
-include(GenerateExportHeader)
-
 #Create library target
 add_library("${PROJECT_NAME}" "")
 add_library("wxt::${PROJECT_NAME}" ALIAS "${PROJECT_NAME}")
-
-#set linker language
-set_target_properties("${PROJECT_NAME}" PROPERTIES LINKER_LANGUAGE CXX)
 
 #set targets output name
 set_target_properties("${PROJECT_NAME}" PROPERTIES
@@ -31,7 +26,7 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES
 )
 
 #Set the targets include directories
-target_include_directories("${PROJECT_NAME}" PRIVATE
+target_include_directories("${PROJECT_NAME}" PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
     $<INSTALL_INTERFACE:include>
@@ -39,6 +34,7 @@ target_include_directories("${PROJECT_NAME}" PRIVATE
 
 
 #Create export file
+include(GenerateExportHeader)
 generate_export_header("${PROJECT_NAME}")
 
 #Install export file
@@ -81,5 +77,3 @@ install(EXPORT "${EXPORT_FILE_NAME}" DESTINATION "${WXT_CONFIG_INSTALL_DIR}"  NA
 export(EXPORT "${EXPORT_FILE_NAME}" FILE "${WXT_CONFIG_BUILD_DIR}/${EXPORT_FILE_NAME}.cmake" NAMESPACE "WXT::")
 
 unset(EXPORT_FILE_NAME)
-
-
