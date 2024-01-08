@@ -1,0 +1,90 @@
+#Description
+#
+#	This file is the config file for the wxTools library
+#
+#Linkage
+#
+#	By default the package will link against the shared version of the library.
+#	If you want to link against the static version of the library then you need to 
+#	define a variable wxTools_STATIC_LIBS and set it to true before calling find_package
+#
+#
+#Usage
+#
+#	For shared libraries
+#	find_package("wxTools" REQUIRED)
+#	target_link_libraries("MyApp" PUBLIC wxt::wxTools)
+#
+#	For static libraries
+#	set(wxTools_STATIC_LIBS True)
+#	find_package("wxTools" REQUIRED)
+#	target_link_libraries("MyApp" PUBLIC wxt::wxTools)
+#
+#
+#Variables
+#
+#	The following variables will be defined by the config file
+#	wxTools_FOUND					Set to true if the package and all components are found.
+#
+#Targets
+#
+#   wxt::wxTools
+#
+
+@PACKAGE_INIT@
+
+
+set(PACKAGE_NAME @PROJECT_NAME@)
+
+#Warn the user of invalid package name 
+if(NOT "${CMAKE_FIND_PACKAGE_NAME}" STREQUAL "${PACKAGE_NAME}")
+	message(WARNING "The package name is ${PACKAGE_NAME} not ${CMAKE_FIND_PACKAGE_NAME}")
+endif()
+
+set(wxTools_VALID_COMPONENTS "")
+
+#Warn the user  of invalid components
+foreach(VAR ${${CMAKE_FIND_PACKAGE_NAME}_FIND_COMPONENTS})
+	list(FIND wxTools_VALID_COMPONENTS ${VAR} INDEX)
+	if(${INDEX} MATCHES -1)
+		message(WARNING "Invalid component ${VAR} valid components are ${wxTools_VALID_COMPONENTS}")
+	endif()
+	unset(INDEX)
+endforeach()
+
+#If no components are supplied to find_package we will assume all components should be found.
+if(${CMAKE_FIND_PACKAGE_NAME}_FIND_COMPONENTS STREQUAL "")
+	set(${CMAKE_FIND_PACKAGE_NAME}_FIND_COMPONENTS ${wxTools_VALID_COMPONENTS})
+endif()
+
+unset(wxTools_VALID_COMPONENTS)
+
+#Make sure the variable was not defined by the calling project.
+if(DEFINED wxTools_STATIC_LIB_POSTFIX)
+	message(FATAL_ERROR "wxTools_STATIC_LIB_POSTFIX variable is used internally and should not be defined by calling project")
+endif()
+
+#When the static version of the library is requested
+#We define a variable to make locating the static version easier
+if(wxTools_STATIC_LIBS)
+	set(wxTools_STATIC_LIB_POSTFIX "Static")
+endif()
+
+#Find all components
+set(EXPORT_PATH "${CMAKE_CURRENT_LIST_DIR}/${PACKAGE_NAME}${wxTools_STATIC_LIB_POSTFIX}-Exports.cmake")	
+if(EXISTS "${EXPORT_PATH}")
+    include("${EXPORT_PATH}")		
+    set(${CMAKE_FIND_PACKAGE_NAME}_FOUND True)
+    message("${PACKAGE_NAME} found component ${PACKAGE_NAME}")
+else()
+    set(${CMAKE_FIND_PACKAGE_NAME}_FOUND False)
+    set("${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE" "Unable to find the export file")
+endif()
+unset(EXPORT_PATH)
+
+unset(STATIC_LIB_POSTFIX)
+
+#Set wxTools_FOUND to true if all components were found and false otherwise
+check_required_components(${PACKAGE_NAME})
+
+unset(PACKAGE_NAME)
