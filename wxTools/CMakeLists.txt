@@ -52,7 +52,10 @@ set(WXT_WX_VERSION "" CACHE STRING "Set the version of wxWidgets to link against
 #Link against the wxWidgets library
 find_package(wxWidgets ${WXT_WX_VERSION} REQUIRED COMPONENTS core base)
 
-include(${wxWidgets_USE_FILE})
+#include use file if being used
+if(wxWidgets_USE_FILE)
+    include(${wxWidgets_USE_FILE})
+endif()
 
 debug_report("wxWidgets_USE_FILE = ${wxWidgets_USE_FILE}")
 debug_report("wxWidgets version=${wxWidgets_FIND_VERSION_COMPLETE} Found=${wxWidgets_FOUND}")
