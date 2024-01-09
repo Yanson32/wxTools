@@ -17,6 +17,7 @@ debug_init()
 add_subdirectory(wxTools)
 
 set(WXT_EXAMPLES False CACHE BOOL "Build examples when this variable is set to True")
+set(WXT_HELP True CACHE BOOL "Set to True to display help text")
 
 #Build preferences
 if(WXT_EXAMPLES)
