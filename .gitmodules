@@ -1,0 +1,6 @@
+[submodule "Modules/wxWidgets"]
+	path = Modules/wxWidgets
+	url = https://github.com/wxWidgets/wxWidgets.git
+[submodule "Modules/Catch2"]
+	path = Modules/Catch2
+	url = https://github.com/catchorg/Catch2.git
