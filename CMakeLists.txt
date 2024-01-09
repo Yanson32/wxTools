@@ -9,6 +9,9 @@ include("debug")
 
 debug_report("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 
+set(WXT_EXAMPLES False CACHE BOOL "Build examples when this variable is set to True")
+set(WXT_HELP True CACHE BOOL "Set to True to display help text")
+
 include("help")
 display_help_text()
 
@@ -16,8 +19,6 @@ project("wxTools" VERSION 0.0.0.1 LANGUAGES CXX)
 debug_init()
 add_subdirectory(wxTools)
 
-set(WXT_EXAMPLES False CACHE BOOL "Build examples when this variable is set to True")
-set(WXT_HELP True CACHE BOOL "Set to True to display help text")
 
 #Build preferences
 if(WXT_EXAMPLES)
