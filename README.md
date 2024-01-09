@@ -6,5 +6,13 @@ This is a library for various classes and functions for creating wxwidgets appli
 * Arch Linux
 
 
+## Dependencies
+* wxWidgets
+* Catch2
+
+
 ## CMake variables 
 * WXT_EXAMPLES - Set to true if examples should be built
+
+
+
