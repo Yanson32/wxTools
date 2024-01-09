@@ -1,6 +1,3 @@
-debug_report("Source file = ${CMAKE_CURRENT_LIST_FILE}")
-debug_report("PROJECT_NAME = ${PROJECT_NAME}")
-
 set(WXT_CONFIG_BUILD_DIR "${wxTools_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 set(WXT_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 
@@ -66,6 +63,16 @@ debug_report("wxWidgets libraries = ${wxWidgets_LIBRARIES}")
 target_include_directories("${PROJECT_NAME}" PUBLIC ${wxWidgets_INCLUDE_DIRS})
 target_link_libraries("${PROJECT_NAME}" ${wxWidgets_LIBRARIES})
 
+#Include helper functions for config file
+include(CMakePackageConfigHelpers)
+
+configure_package_config_file("${${PROJECT_NAME}_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in"
+	"${WXT_CONFIG_BUILD_DIR}/${PROJECT_NAME}Config.cmake"
+INSTALL_DESTINATION
+"${CMAKE_INSTALL_DIR}/cmake/${PROJECT_NAME}"
+)
+
+install(FILES "${WXT_CONFIG_BUILD_DIR}/${PROJECT_NAME}Config.cmake" DESTINATION "${WXT_CONFIG_INSTALL_DIR}")
 
 #create export file name for shared library 
 set(EXPORT_FILE_NAME "${PROJECT_NAME}Shared-Exports")

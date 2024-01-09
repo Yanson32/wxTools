@@ -15,7 +15,7 @@ foreach(LOOP_VAR ${DIRECTORIES})
 endforeach()
 
 #The path to this directory from the directory containing Main.cpp
-set(INSTALL_DIRECTORY "wxTools")
+set(INSTALL_DIRECTORY "include/wxTools")
 
 
 if(FILES)

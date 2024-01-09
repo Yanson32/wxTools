@@ -66,19 +66,21 @@ endif()
 
 #When the static version of the library is requested
 #We define a variable to make locating the static version easier
+set(wxTools_STATIC_LIB_POSTFIX "Shared")
+
 if(wxTools_STATIC_LIBS)
 	set(wxTools_STATIC_LIB_POSTFIX "Static")
 endif()
 
 #Find all components
 set(EXPORT_PATH "${CMAKE_CURRENT_LIST_DIR}/${PACKAGE_NAME}${wxTools_STATIC_LIB_POSTFIX}-Exports.cmake")	
+
 if(EXISTS "${EXPORT_PATH}")
     include("${EXPORT_PATH}")		
     set(${CMAKE_FIND_PACKAGE_NAME}_FOUND True)
-    message("${PACKAGE_NAME} found component ${PACKAGE_NAME}")
 else()
     set(${CMAKE_FIND_PACKAGE_NAME}_FOUND False)
-    set("${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE" "Unable to find the export file")
+    set("${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE" "Unable to find the export file ${EXPORT_PATH}")
 endif()
 unset(EXPORT_PATH)
 

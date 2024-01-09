@@ -16,6 +16,8 @@ include("help")
 display_help_text()
 
 project("wxTools" VERSION 0.0.0.1 LANGUAGES CXX)
+
+include ("GNUInstallDirs")
 debug_init()
 add_subdirectory(wxTools)
 
